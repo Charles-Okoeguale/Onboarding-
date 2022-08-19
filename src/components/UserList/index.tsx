@@ -10,19 +10,13 @@ import { Iuser } from "../../types";
 const UserList = () => {
     const {users, updateUsers, userLoading, setUserLoading} = useContext(AppContext)
 
-    const getUsers = () => {
+    const getUsers = (() => {
         axios.get('https://jsonplaceholder.typicode.com/users')
         .then((response : AxiosResponse) => {
             setUserLoading(false)
             updateUsers(response.data)
         })
-    }
-
-    useEffect(() => {
-        setTimeout(() => {
-            getUsers()
-          }, 1000);
-    }, [])
+    })()
 
     return (
         <Flex w='40%' direction='column' p={8}>
