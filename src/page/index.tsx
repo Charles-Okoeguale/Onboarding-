@@ -7,7 +7,6 @@ import { Iresponse } from '../types';
 import { Outlet } from 'react-router-dom';
 
 const Home = () => {
-  
     const [users, updateUsers] = useState<Iresponse>([])
     const [tasks, setTasks] = useState<Iresponse>([])
     const [userLoading, setUserLoading] = useState<boolean>(true)
