@@ -8,6 +8,11 @@ import { Outlet } from 'react-router-dom';
 
 const Home = () => {
   
+    const [users, updateUsers] = useState<Iresponse>([])
+    const [tasks, setTasks] = useState<Iresponse>([])
+    const [userLoading, setUserLoading] = useState<boolean>(true)
+    const [isError, setIsError] = useState<boolean>(false)
+    const [userError, setUserError] = useState<boolean>(false)
     
     return (
         <AppContext.Provider value={{users, updateUsers, tasks, setTasks, userLoading, setUserLoading, isError, setIsError, userError, setUserError}}>
